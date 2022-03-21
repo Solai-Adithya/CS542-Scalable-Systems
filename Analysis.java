@@ -1,15 +1,23 @@
+import java.util.ArrayList;
+
 public class Analysis {
     public static void main(String args[]) {
-        String myArgs[] = {"1000000", "10000000", "100000000"};
+        int NArray[] = {1000000, 10000000, 100000000};
+
+        GenerateRandom obj = new GenerateRandom();
+        ArrayList<Integer> numbers = obj.generateRandomArrayList(NArray[0]);
+        // obj.printArrayList(numbers);
 
         System.out.println("Q1 Stream Sum");
-        Q1Stream.TimeAnalysis(myArgs);
+        Q1Stream.TimeAnalysis(numbers);
 
         System.out.println("Q2 Parallel Stream Sum");
-        Q2ParallelStream.TimeAnalysis(myArgs);
+        Q2ParallelStream.TimeAnalysis(numbers);
 
         System.out.println("Q3 Fork Join A");
+        Q3ForkJoinA.TimeAnalysis(numbers);
 
         System.out.println("Q3 Fork Join B");
+        Q3ForkJoinB.TimeAnalysis(numbers);
     }
 }

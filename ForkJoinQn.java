@@ -9,10 +9,10 @@ public class ForkJoinQn {
         this.arr = arrArg;
     }
 
-    public long computeSum(int start,int end) {
-        long accumulator=0;
-        for(int i=start;i<end;i++) {
-            accumulator+=arr.get(i);
+    public long computeSum(int start, int end) {
+        long accumulator = 0;
+        for (int i = start; i < end; i++) {
+            accumulator += arr.get(i);
         }
         return accumulator;
     }
@@ -26,8 +26,8 @@ public class ForkJoinQn {
             this.end = endArg;
         }
 
-        protected Long compute(){
-            return computeSum(start,end);
+        protected Long compute() {
+            return computeSum(start, end);
         }
     }
 
@@ -42,31 +42,33 @@ public class ForkJoinQn {
         }
 
         protected Long compute() {
-            if(end-start>THRESHOLD) {
-                int mid = (start+end)/2;
-                SumPartB subtask1 = new SumPartB(start,mid);
-                SumPartB subtask2 = new SumPartB(mid,end);
+            if (end - start > THRESHOLD) {
+                int mid = (start + end) / 2;
+                SumPartB subtask1 = new SumPartB(start, mid);
+                SumPartB subtask2 = new SumPartB(mid, end);
                 subtask1.fork();
-                return subtask1.join()+subtask2.compute();
+                return subtask1.join() + subtask2.compute();
             } else {
-                return computeSum(start,end);
+                return computeSum(start, end);
             }
         }
     }
 
     public void parallelSumPartA() {
         ForkJoinPool forkJoinPool = new ForkJoinPool(2);
-        Long firstHalfSum = forkJoinPool.invoke(new SumPartA(0,arr.size()/2));
-        Long secondHalfSum = forkJoinPool.invoke(new SumPartA(arr.size()/2, arr.size()));
-        System.out.println(firstHalfSum+", "+secondHalfSum);
+        Long firstHalfSum = forkJoinPool.invoke(new SumPartA(0, arr.size() / 2));
+        Long secondHalfSum = forkJoinPool.invoke(new SumPartA(arr.size() / 2, arr.size()));
+        System.out.println(firstHalfSum + ", " + secondHalfSum);
     }
 
     public long parallelSumPartB() {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
-        return forkJoinPool.invoke(new SumPartB(0,arr.size()));
+        return forkJoinPool.invoke(new SumPartB(0, arr.size()));
     }
 
     public static void main(String args[]) {
+        // USE PART WISE A and B instead of this main
+
         int n = 1000;
         // we will take n from the args
         if (args.length > 0) {
@@ -80,18 +82,17 @@ public class ForkJoinQn {
         long startTime = System.nanoTime();
         ForkJoinQn instance = new ForkJoinQn(numbers);
 
-//        PartA
+        // PartA
         instance.parallelSumPartA();
 
-//        PartB
-//        long arrsum = instance.parallelSumPartB();
-//        System.out.println("Array sum:" + arrsum);
+        // PartB
+        // long arrsum = instance.parallelSumPartB();
+        // System.out.println("Array sum:" + arrsum);
 
         long endTime = System.nanoTime();
 
         double duration = (endTime - startTime) / 1000000.0;
         System.out.println("Time takes to calculate sum = " + duration + " milliseconds.");
-
     }
 
 }
