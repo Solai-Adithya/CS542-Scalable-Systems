@@ -23,9 +23,8 @@ class Sum extends RecursiveTask<Long> {
 }
 
 public class ForkJoinQn {
-    static ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8));
 
-    public static void parallelSumPartA() {
+    public static void parallelSumPartA(ArrayList<Integer> arr) {
         ForkJoinPool forkJoinPool = new ForkJoinPool(2);
         Long firstHalfSum = forkJoinPool.invoke(new Sum(arr,0,arr.size()/2));
         Long secondHalfSum = forkJoinPool.invoke(new Sum(arr,arr.size()/2, arr.size()));
@@ -33,7 +32,25 @@ public class ForkJoinQn {
     }
 
     public static void main(String args[]) {
-        parallelSumPartA();
+
+        int n = 1000;
+        // we will take n from the args
+        if (args.length > 0) {
+            n = Integer.parseInt(args[0]);
+        }
+
+        GenerateRandom obj = new GenerateRandom();
+        ArrayList<Integer> numbers = obj.generateRandomArrayList(n);
+        // obj.printArrayList(numbers);
+
+        long startTime = System.nanoTime();
+
+        parallelSumPartA(numbers);
+
+        long endTime = System.nanoTime();
+
+        double duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Time takes to calculate sum = " + duration + " milliseconds.");
     }
 
 }
