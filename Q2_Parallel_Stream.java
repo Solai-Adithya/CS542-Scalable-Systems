@@ -1,10 +1,9 @@
 import java.util.*;
-import java.util.stream.*;
 
-public class Q1_Stream {
+public class Q2_Parallel_Stream {
 
     public static void methodToTime(ArrayList<Integer> numbers) {
-        int sm = numbers.stream().reduce(0, Integer::sum);
+        int sm = numbers.parallelStream().reduce(0, Integer::sum);
         System.out.println("The sum is: " + sm);
     }
 
