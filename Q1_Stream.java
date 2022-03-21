@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.*;
 
 public class Q1_Stream {
 
@@ -11,6 +12,19 @@ public class Q1_Stream {
         }
 
         GenerateRandom obj = new GenerateRandom();
-        obj.printArrayList(obj.generateRandomArrayList(n));
+        ArrayList<Integer> numbers = obj.generateRandomArrayList(n);
+        // obj.printArrayList(numbers);
+
+        long startTime = System.nanoTime();
+
+
+        int sm = numbers.stream().reduce(0, Integer::sum);
+        System.out.println("The sum is: " + sm);
+
+
+        long endTime = System.nanoTime();
+
+        double duration = (endTime - startTime) / 1000000.0;
+        System.out.println("Time takes to calculate sum = " + duration + " milliseconds.");
     }
 }
