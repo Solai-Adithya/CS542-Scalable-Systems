@@ -4,8 +4,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class AsnycFinish extends Template{
-    public static Callable getSum(ArrayList<Integer> newArr, int low, int high){
+public class Q3AsyncFinishA extends Template{
+    public static Callable<Long> getSum(ArrayList<Integer> newArr, int low, int high){
         Callable<Long> callable = () -> {
             Long accumulator = 0L;
             for(int i=low;i<high;i++){
@@ -17,7 +17,7 @@ public class AsnycFinish extends Template{
     }
     
     public static void methodToTime(ArrayList<Integer> numbers) {
-        
+
         System.out.println("Check here");
         ExecutorService executor = Executors.newFixedThreadPool(2);
 

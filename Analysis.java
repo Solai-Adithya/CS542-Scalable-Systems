@@ -20,7 +20,11 @@ public class Analysis {
         System.out.println("Q3 Fork Join B");
         Q3ForkJoinB.TimeAnalysis(numbers);
 
-        System.out.println("Q3 Async-Finish");
-        AsnycFinish.TimeAnalysis(numbers);
+        System.out.println("Q3 Async-Finish A");
+        Q3AsyncFinishA.TimeAnalysis(numbers);
+
+        // Heap space out of memory
+        // System.out.println("Q3 Async-Finish B");
+        // Q3AsyncFinishB.TimeAnalysis(numbers);
     }
 }
