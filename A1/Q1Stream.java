@@ -1,10 +1,10 @@
+package A1;
 import java.util.ArrayList;
 
-public class Q2ParallelStream extends Template {
+public class Q1Stream extends Template {
     public static void methodToTime(ArrayList<Integer> numbers) {
-        System.out.println("Parallel method");
-
-        long sm = numbers.parallelStream().map((vl) -> (long) vl).reduce(0L, Long::sum);
+        System.out.println("Stream method");
+        long sm = numbers.stream().map((vl) -> (long) vl).reduce(0L, Long::sum);
         System.out.println("The sum is: " + sm);
     }
 

@@ -1,3 +1,4 @@
+package A1;
 import java.util.ArrayList;
 
 public class GenerateRandom {
