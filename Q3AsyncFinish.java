@@ -34,6 +34,7 @@ public class Q3AsyncFinish extends Template {
         Future<Long> future1 = instance.calculateSum(0, numbers.size() / 2);
         Future<Long> future2 = instance.calculateSum(numbers.size() / 2, numbers.size());
 
+        
         // if(!future1.isDone() || !future2.isDone()){
             try{
                 Long result1 = future1.get();
@@ -41,7 +42,6 @@ public class Q3AsyncFinish extends Template {
 
                 System.out.println(result1+", "+result2);
             }catch(Exception e){
-                e.printStackTrace();
             }
         // }
     }
@@ -60,7 +60,7 @@ public class Q3AsyncFinish extends Template {
 
     public static void main(String args[]) {
         GenerateRandom obj = new GenerateRandom();
-        ArrayList<Integer> numbers = obj.generateRandomArrayList(1000);
+        ArrayList<Integer> numbers = obj.generateRandomArrayList(1000000);
         // obj.printArrayList(numbers);
 
         TimeAnalysis(numbers);
