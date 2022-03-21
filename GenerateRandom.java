@@ -10,7 +10,7 @@ public class GenerateRandom {
     }
 
     public int generateRandom() {
-        return (int) (Math.random() * 10);
+        return (int) (Math.random() * 100);
     }
 
     public ArrayList<Integer> generateRandomArrayList(int n) {
