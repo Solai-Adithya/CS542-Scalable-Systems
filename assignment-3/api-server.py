@@ -19,7 +19,7 @@ def getVideoStream():
     elif(prob > 0.4):
         quality =  'Good'
     else:
-        quality = 'Poor'
+        quality = 'poor'
         
     #return json.dumps({'video': 'videoStreamFile', 'quality': quality})
     return quality
@@ -33,7 +33,7 @@ def getAudioStream():
     elif(prob > 0.2):
         quality =  'Good'
     else:
-        quality = 'Poor'
+        quality = 'poor'
         
     #return json.dumps({'audio': 'audioStreamFilePlace', 'quality': quality})
     return quality
@@ -47,7 +47,7 @@ def getChatMsg():
     elif(prob > 0.01):
         quality =  'Good'
     else:
-        quality = 'Poor'
+        quality = 'poor'
         
     #return json.dumps({'chat': 'chatMessagesFile', 'quality': quality})
     return quality
