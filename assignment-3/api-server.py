@@ -21,7 +21,8 @@ def getVideoStream():
     else:
         quality = 'Poor'
         
-    return json.dumps({'video': 'videoStreamFile', 'quality': quality})
+    #return json.dumps({'video': 'videoStreamFile', 'quality': quality})
+    return quality
 
 
 @app.route('/getAudioStream')
@@ -34,7 +35,8 @@ def getAudioStream():
     else:
         quality = 'Poor'
         
-    return json.dumps({'audio': 'audioStreamFilePlace', 'quality': quality})
+    #return json.dumps({'audio': 'audioStreamFilePlace', 'quality': quality})
+    return quality
 
 
 @app.route('/getChatMsg')
@@ -47,8 +49,5 @@ def getChatMsg():
     else:
         quality = 'Poor'
         
-    return json.dumps({'chat': 'chatMessagesFile', 'quality': quality})
-
-
-
-    
+    #return json.dumps({'chat': 'chatMessagesFile', 'quality': quality})
+    return quality
