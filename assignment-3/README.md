@@ -10,3 +10,17 @@ The APIs can be accessed at
 
 They return a JSON response like: {"video": "videoStreamFile", "quality": "Poor"}
 The quality field is of interest to us.
+
+
+
+The API in java can be called like:
+URL API_SERVER = new URL("http://localhost:5000/getVideoStream");
+URLConnection connection = API_SERVER.openConnection();
+BufferedReader in = new BufferedReader(
+        new InputStreamReader(
+                connection.getInputStream()));
+String inputLine;
+
+while ((inputLine = in.readLine()) != null)
+    System.out.println(inputLine);
+in.close();
