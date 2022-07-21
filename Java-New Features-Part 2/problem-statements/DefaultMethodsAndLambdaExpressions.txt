@@ -1,0 +1,16 @@
+Lambda expressions
+1. (int x, int y) -> x+y; or (x, y) -> x + y; which one of these is a valid lambda expression?
+2. (int x, y) -> x + y; is this a valid lambda expression?
+3. Sort the array in terms of their absolute value: [-1, 2. 23, -19, -100, 20, 203, -102, 0]
+
+
+Default methods
+Default methods are mainly useful in Evolving APIs in a compatible way. Chapter 13 from Modern Java in action has a nice explanation on default methods. Here are a few questions: 
+1. Can we make the Default method static in Java?
+2. Can an interface contain more than one Default method?
+3. Can default method override equals(), hashCode() or toString() from Object class?
+4. Can we declare Default methods inside a class in Java?
+5. Try to find some other use cases of default methods.
+
+
+

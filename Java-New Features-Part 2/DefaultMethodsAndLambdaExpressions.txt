@@ -1,0 +1,12 @@
+Lambda expressions:
+1- Both (int x,int y) -> x+y; and (x,y) -> x+y; are valid expressions. When we declare the parameter's type we call it a explicit lambda expression otherwise implicit lambda expression. If we omit the types of parameters then we have to omit types for all the parameters.
+2- (int x,y) -> x + y; is not a valid lambda expression as we chosse to omit the type of y and did not omit the type of x.
+3. We can use the lambda expressions in place of comparator to sort the array items according ot their absolute values.
+	Collections.sort(array,(el1 , el2) -> (abs(el1) > abs(el2)) ? -1 : (abs(el1) < abs(el2)) ? 1 : 0);
+
+Default methods:
+1- No, we can not make a default method static in java. Because a default method is a part of an object and is inovled using instance of class but static method is part of the class and can be invoked without using instance of class.
+2- Yes, a interface can contain more than one default methods.
+3- NO, these methods are all intrinsically about object state, and it is the class that owns the state, not the interface, who is in the best position to determine what equality means for that class.
+4- No, we can not declare the default methods in class. but we can use the default methods declared in interface using the instance of the class implementing the interface.
+5- When many classes are implementing a given interface we can use the default method when a new function is needed instead of making changes in all implementations of the interface.

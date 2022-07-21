@@ -1,0 +1,67 @@
+Worker created with path:/nodes/node0000000000
+---------------------------------------------------------
+First worker: /nodes/node0000000000 has been designated as the master
+---------------------------------------------------------
+Worker created with path:/nodes/node0000000001
+Now /nodes/node0000000001 has set a watch on:/nodes/node0000000000
+
+Worker created with path:/nodes/node0000000002
+Now /nodes/node0000000002 has set a watch on:/nodes/node0000000001
+
+Worker created with path:/nodes/node0000000003
+Now /nodes/node0000000003 has set a watch on:/nodes/node0000000002
+
+Worker created with path:/nodes/node0000000004
+Now /nodes/node0000000004 has set a watch on:/nodes/node0000000003
+
+Worker created with path:/nodes/node0000000005
+Now /nodes/node0000000005 has set a watch on:/nodes/node0000000004
+
+Worker created with path:/nodes/node0000000006
+Now /nodes/node0000000006 has set a watch on:/nodes/node0000000005
+
+Worker created with path:/nodes/node0000000007
+Now /nodes/node0000000007 has set a watch on:/nodes/node0000000006
+
+Worker created with path:/nodes/node0000000008
+Now /nodes/node0000000008 has set a watch on:/nodes/node0000000007
+
+Worker created with path:/nodes/node0000000009
+Now /nodes/node0000000009 has set a watch on:/nodes/node0000000008
+
+
+
+/nodes/node0000000002 was watching: /nodes/node0000000001 and that node got killed
+Worker:/nodes/node0000000001 has been killed
+Now /nodes/node0000000002 has set a watch on:/nodes/node0000000000
+
+Worker:/nodes/node0000000009 has been killed
+/nodes/node0000000002 was watching: /nodes/node0000000000 and that node got killed
+Worker:/nodes/node0000000000 has been killed
+---------------------------------------------------------
+Worker:/nodes/node0000000002 has assumed the role of master
+---------------------------------------------------------
+/nodes/node0000000004 was watching: /nodes/node0000000003 and that node got killed
+Worker:/nodes/node0000000003 has been killed
+Now /nodes/node0000000004 has set a watch on:/nodes/node0000000002
+
+/nodes/node0000000004 was watching: /nodes/node0000000002 and that node got killed
+Worker:/nodes/node0000000002 has been killed
+---------------------------------------------------------
+Worker:/nodes/node0000000004 has assumed the role of master
+---------------------------------------------------------
+/nodes/node0000000005 was watching: /nodes/node0000000004 and that node got killed
+Worker:/nodes/node0000000004 has been killed
+---------------------------------------------------------
+Worker:/nodes/node0000000005 has assumed the role of master
+---------------------------------------------------------
+/nodes/node0000000007 was watching: /nodes/node0000000006 and that node got killed
+Worker:/nodes/node0000000006 has been killed
+Now /nodes/node0000000007 has set a watch on:/nodes/node0000000005
+
+/nodes/node0000000008 was watching: /nodes/node0000000007 and that node got killed
+Worker:/nodes/node0000000007 has been killed
+Now /nodes/node0000000008 has set a watch on:/nodes/node0000000005
+
+Worker:/nodes/node0000000008 has been killed
+Worker:/nodes/node0000000005 has been killed

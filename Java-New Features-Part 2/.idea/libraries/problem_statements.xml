@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="problem-statements">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/problem-statements/pattern-matching.zip!/" />
+      <root url="jar://$PROJECT_DIR$/problem-statements/JavaStreams.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

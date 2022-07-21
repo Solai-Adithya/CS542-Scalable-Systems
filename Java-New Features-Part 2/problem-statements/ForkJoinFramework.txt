@@ -1,0 +1,6 @@
+1. Differentiate between recursiveAction and recursiveTask.
+2. What is the parallelism parameter of ForkJoinPool?
+3. Implement string to integer recursively (for large integers with type “BigInt” in Java)  function using  fork join pool framework
+Example:
+Input: “123456789101112131415161819202125123456789101112131415161819202125123456789101112131415161819202125” as a String
+Output: 123456789101112131415161819202125123456789101112131415161819202125123456789101112131415161819202125 as a BigInteger

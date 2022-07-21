@@ -1,0 +1,36 @@
+1. What are inner classes in Java? What are their advantage?
+
+2. What is the difference between static and non-static inner classes?
+
+3. Give an example program in which we are instantiating an anonymous class. If we compile this program how many class files will be created?
+
+4. Consider the following code:
+	class Superclass {
+		void doSomething() {
+			System.out.println ("In the Super class");
+		}
+	}
+
+	class hasAnonymous {
+		Superclass anon = new Superclass () {
+			void doSomething() {
+				System.out.println("In the Anonymous class");
+			}
+
+			void doStuff() {
+				System.out.println ("An Anonymous class method not present in superclass");
+			}
+
+		};
+
+		public void doIt() {
+			anon.doSomething(); // legal superclass has this method
+			anon.doStuff(); // Not legal
+		}
+	}
+What will be the output if hasAnonymous.doIt() method is called?
+
+
+5. Event Listeners are often implemented using anonymous classes. Explain why we can't/don't do it using Lambda expressions?
+
+6. What is behavior parameterization? Apart from anonymous classes and lambda expressions can you think of some other construct in Java which enables behavior parameterization?

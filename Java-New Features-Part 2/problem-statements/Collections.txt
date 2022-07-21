@@ -1,0 +1,6 @@
+A school has n sections in 10th std, for every section, a student list is maintained which consists of the student's name, roll number and marks. For internal purposes the school wishes to maintain these n sections sorted in an order such that:
+	1. A section with higher average marks should be placed earlier.
+	2. If two sections have an equal average marks score, then the class with less number of students is preferred
+	3. In every section students should be sorted according to their roll number
+
+Implement a data structure using collections in Java to support this in such a way that new sections can be added whenever needed and the sorted order of these sections is still maintained.
